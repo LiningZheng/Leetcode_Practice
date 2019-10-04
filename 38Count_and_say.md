@@ -33,5 +33,8 @@ class Solution {
 ```
 
 有点小卡
+
 the problem lies in the iteration model..
-after the middle case, think about the initial case :)
+
+after the middle case, think about the initial case. also keep in mind the meaning of each variable at the start of the iteration
+
