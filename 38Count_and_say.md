@@ -30,7 +30,7 @@ class Solution {
         return sb.toString();
     }
 }
-```java
+```
 
 有点小卡
 the problem lies in the iteration model..
