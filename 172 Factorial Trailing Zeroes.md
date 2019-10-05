@@ -18,8 +18,9 @@ class Solution {
     }
 }
 ```
+
 trailing zeros come from factors 2 and 5. 
-# of 2 is obviously more than # of 5 
+the # of 2 is obviously more than # of 5 
 equivalent====> count how many 5 factors are there from n!
 
 
