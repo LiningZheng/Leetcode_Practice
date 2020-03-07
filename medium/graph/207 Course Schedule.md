@@ -92,3 +92,46 @@ class Solution {
 
 to check if there's a cycle in the graph. 
 
+=====================
+### What about detecting cycles in an undirected graph?
+### 1 
+it could be the same as the DFS solution as above, using boolean array to keep track of the visited ones
+
+### 2
+using one boolean array for tracking, inputing parent node for the recursive function.
+
+```java
+class Solution {
+    boolean main(....) {
+        List<List<Integer>> graph = new ArrayList<>(numCourses);
+        //building the graph and so on...........
+                boolean[] visited = new boolean[numCourses];
+        Arrays.fill(visited, false);
+        
+        for (int i = 0; i < numCourses; i++) {
+            if (visited[i]) continue;
+            if (findCycle(graph, -1, i, visited)) return false;
+        }
+        
+        return true;
+    }
+    
+    private boolean findCycle(
+        List<List<Integer>> graph, 
+        int parentNode, 
+        int curNode, 
+        boolean[] visited) {
+        
+        visited[curNode] = true;
+        
+        for (int neighbor : graph.get(curNode)) {
+            if (neighbor != parentNode && visited[neighbor]) 
+                return true;
+            if (findCycle(graph, curNode, neighbor, visited))
+                return true;
+        }
+        
+        return false;
+    }
+}
+```
